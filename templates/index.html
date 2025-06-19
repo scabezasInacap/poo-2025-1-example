@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Mi Aplicación Flask{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido a Mi Aplicación Flask con POO</h1>
+    <p>Esta es la página de inicio. Explora la aplicación.</p>
+    {% if not current_user.is_authenticated %}
+        <p>Por favor, <a href="{{ url_for('auth.login') }}">inicia sesión</a> o <a href="{{ url_for('auth.register') }}">regístrate</a> para acceder a más funcionalidades.</p>
+    {% endif %}
+{% endblock %}
